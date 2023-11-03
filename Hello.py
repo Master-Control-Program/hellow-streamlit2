@@ -109,4 +109,4 @@ while len(random_numbers) < 4:
 
 random_numbers_list = list(random_numbers)  # Convert the set to a list
 
-print(random_numbers_list)
+st.write(random_numbers_list)
