@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""import streamlit as st
+import streamlit as st
 from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
@@ -49,6 +49,6 @@ def run():
 
 if __name__ == "__main__":
     run()
-"""
+
 
 
