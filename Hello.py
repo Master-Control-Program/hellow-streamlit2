@@ -93,19 +93,20 @@ for i in range(1, 4):
 for i, number in enumerate(sequential_numbers, 1):
     st.write(f"Alphanumeric Number {i}: {number}")
 
-
 import random
 
 # Existing list of excluded numbers
 excluded_numbers = [3, 7, 5]
 
-# Initialize an empty list to store the random numbers
-random_numbers = []
+# Initialize an empty set to store unique random numbers
+random_numbers = set()
 
-# Generate 4 random numbers that are 1 digit in length and not in the excluded list
+# Generate 4 unique random numbers that are 1 digit in length and not in the excluded list
 while len(random_numbers) < 4:
     num = random.randint(0, 9)  # Generate a random number between 0 and 9
     if num not in excluded_numbers:
-        random_numbers.append(num)
+        random_numbers.add(num)
 
-st.write(random_numbers)
+random_numbers_list = list(random_numbers)  # Convert the set to a list
+
+print(random_numbers_list)
