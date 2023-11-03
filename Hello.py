@@ -110,3 +110,29 @@ while len(random_numbers) < 4:
 random_numbers_list = list(random_numbers)  # Convert the set to a list
 
 st.write(random_numbers_list)
+
+
+
+import random
+import string
+
+# Function to generate a unique plan code
+def generate_unique_plan_code(length=8):
+    characters = string.ascii_letters + string.digits  # Use letters and digits
+    plan_code = ''.join(random.choice(characters) for _ in range(length))
+    return plan_code
+
+# Set to store existing plan codes (you can replace this with your actual data)
+existing_plan_codes = set()
+
+# Generate 5 unique plan codes
+unique_plan_codes = set()
+while len(unique_plan_codes) < 5:
+    new_plan_code = generate_unique_plan_code()
+    if new_plan_code not in existing_plan_codes:
+        existing_plan_codes.add(new_plan_code)
+        unique_plan_codes.add(new_plan_code)
+
+st.write("Generated unique plan codes:")
+for plan_code in unique_plan_codes:
+    print(plan_code)
