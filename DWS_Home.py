@@ -20,10 +20,24 @@ st.markdown("""
             ### Data Warehouse Table Maintenance👋
             """)
 
-def run():
-    st.set_page_config(
-        page_title="DWS Home",
-        page_icon="👋")
+
+
+# Title for the app
+st.title("Search Criteria")
+
+# Create a form with a text input and a submit button
+search_criteria = st.text_input("Enter Search Criteria:")
+if st.button("Search"):
+    # You can perform some action here when the user clicks the "Search" button
+    st.write(f"Searching for: {search_criteria}")
+
+# Optionally, you can add more form elements like checkboxes, radio buttons, etc.
+# Example:
+# use_case = st.radio("Select Use Case:", ["Option 1", "Option 2", "Option 3"])
+# if st.button("Submit"):
+#     st.write(f"Selected Use Case: {use_case}")
+
+
 
 
  
