@@ -34,15 +34,15 @@ company_code = st.text_input("Company Code:")
 
 # Create a dropdown menu for System Code with the specified choices
 system_code_options = ["SHARP", "CIC", "LIFEPRO"]
-system_code = st.selectbox("System Code:", system_code_options)
+system_code = st.selectbox("System Code:", system_code_options, index=0)
 
 # Create a dropdown menu for LOB Name with the specified choices
 lob_name_options = ["ANNUITY", "GROUP", "HEALTH", "LIFE"]
-lob_name = st.selectbox("LOB Name:", lob_name_options)
+lob_name = st.selectbox("LOB Name:", lob_name_options, index=0)
 
 # Create a dropdown menu for Major Product Group Name with specified choices
 major_product_group_options = ["EI ANN", "EIUL", "FIXED ANN", "GRP ANN", "GRP HEALTH", "GRP LIFE"]
-major_product_group_name = st.selectbox("Major Product Group Name:", major_product_group_options)
+major_product_group_name = st.selectbox("Major Product Group Name:", major_product_group_options, index=0)
 
 minor_product_group_name = st.text_input("Minor Product Group Name:")
 marketing_product_group_name = st.text_input("Marketing Product Group Name:")
