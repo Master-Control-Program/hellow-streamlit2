@@ -31,9 +31,19 @@ st.title("Search Criteria")
 # Create search boxes for various criteria
 coverage_plan = st.text_input("Coverage Plan:")
 company_code = st.text_input("Company Code:")
-system_code = st.text_input("System Code:")
-lob_name = st.text_input("LOB Name:")
-major_product_group_name = st.text_input("Major Product Group Name:")
+
+# Create a dropdown menu for System Code with the specified choices
+system_code_options = ["SHARP", "CIC", "LIFEPRO"]
+system_code = st.selectbox("System Code:", system_code_options)
+
+# Create a dropdown menu for LOB Name with the specified choices
+lob_name_options = ["ANNUITY", "GROUP", "HEALTH", "LIFE"]
+lob_name = st.selectbox("LOB Name:", lob_name_options)
+
+# Create a dropdown menu for Major Product Group Name with specified choices
+major_product_group_options = ["EI ANN", "EIUL", "FIXED ANN", "GRP ANN", "GRP HEALTH", "GRP LIFE"]
+major_product_group_name = st.selectbox("Major Product Group Name:", major_product_group_options)
+
 minor_product_group_name = st.text_input("Minor Product Group Name:")
 marketing_product_group_name = st.text_input("Marketing Product Group Name:")
 product_code = st.text_input("Product Code:")
