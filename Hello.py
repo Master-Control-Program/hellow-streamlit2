@@ -23,20 +23,39 @@ st.markdown("""
 
 
 
+import streamlit as st
+
 # Title for the app
 st.title("Search Criteria")
 
-# Create a form with a text input and a submit button
-search_criteria = st.text_input("Enter Search Criteria:")
+# Create search boxes for various criteria
+coverage_plan = st.text_input("Coverage Plan:")
+company_code = st.text_input("Company Code:")
+system_code = st.text_input("System Code:")
+lob_name = st.text_input("LOB Name:")
+major_product_group_name = st.text_input("Major Product Group Name:")
+minor_product_group_name = st.text_input("Minor Product Group Name:")
+marketing_product_group_name = st.text_input("Marketing Product Group Name:")
+product_code = st.text_input("Product Code:")
+
+# Create a submit button
 if st.button("Search"):
     # You can perform some action here when the user clicks the "Search" button
-    st.write(f"Searching for: {search_criteria}")
+    st.write("Search Results:")
+    st.write(f"Coverage Plan: {coverage_plan}")
+    st.write(f"Company Code: {company_code}")
+    st.write(f"System Code: {system_code}")
+    st.write(f"LOB Name: {lob_name}")
+    st.write(f"Major Product Group Name: {major_product_group_name}")
+    st.write(f"Minor Product Group Name: {minor_product_group_name}")
+    st.write(f"Marketing Product Group Name: {marketing_product_group_name}")
+    st.write(f"Product Code: {product_code}")
 
-# Optionally, you can add more form elements like checkboxes, radio buttons, etc.
-# Example:
-# use_case = st.radio("Select Use Case:", ["Option 1", "Option 2", "Option 3"])
-# if st.button("Submit"):
-#     st.write(f"Selected Use Case: {use_case}")
+# Clear button to reset the form fields
+if st.button("Clear"):
+    coverage_plan = company_code = system_code = lob_name = ""
+    major_product_group_name = minor_product_group_name = ""
+    marketing_product_group_name = product_code = ""
 
 
 
