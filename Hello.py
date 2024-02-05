@@ -20,11 +20,8 @@ st.markdown("""
             ### Data Warehouse Table Maintenance👋
             """)
 
-def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_title="DWS Home",
-        page_icon="👋")
+
+
 
 # Title for the app
 st.title("Search Criteria")
