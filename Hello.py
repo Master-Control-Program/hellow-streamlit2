@@ -31,6 +31,3 @@ def run():
 
 
 
-st.write("Generated unique plan codes:")
-for plan_code in unique_plan_codes:
-    print(plan_code)
