@@ -17,7 +17,7 @@
 import streamlit as st
 
 # Create the SQL connection to pets_db as specified in your secrets file.
-conn = st.connection('pets_db', type='sql')
+conn = st.connection('brad1_db', type='sql')
 
 # Insert some data with conn.session.
 with conn.session as s:
