@@ -108,7 +108,13 @@ if st.button("Search"):
     st.write(f"Marketing Product Group Name: {marketing_product_group_name}")
     st.write(f"Product Code: {product_code}")
 
-# Create a new section for "Add New Coverage" next to the "Search Criteria" section
+# Create a clear button to reset the search form fields
+if st.button("Clear"):
+    coverage_plan = company_code = system_code = lob_name = ""
+    major_product_group_name = minor_product_group_name = ""
+    marketing_product_group_name = product_code = ""
+
+# Create a new section for "Add New Coverage"
 st.header("Add Coverage")
 
 # Add form fields for adding new coverage
