@@ -68,17 +68,6 @@ if not check_password():
 
 
 import streamlit as st
-from streamlit.logger import get_logger
-
-LOGGER = get_logger(__name__)
-st.markdown("""
-            ### Data Warehouse Table Maintenance👋
-            """)
-
-
-
-
-import streamlit as st
 
 # Title for the app
 st.title("Search and Add Coverage")
@@ -119,48 +108,42 @@ if st.button("Search"):
     st.write(f"Marketing Product Group Name: {marketing_product_group_name}")
     st.write(f"Product Code: {product_code}")
 
-# Create a clear button to reset the search form fields
-if st.button("Clear"):
-    coverage_plan = company_code = system_code = lob_name = ""
-    major_product_group_name = minor_product_group_name = ""
-    marketing_product_group_name = product_code = ""
-
-# Create a new section for "Add New Coverage"
-st.header("Add New Coverage")
+# Create a new section for "Add New Coverage" next to the "Search Criteria" section
+st.header("Add Coverage")
 
 # Add form fields for adding new coverage
-new_coverage_plan = st.text_input("New Coverage Plan:")
-new_company_code = st.text_input("New Company Code:")
-new_system_code = st.text_input("New System Code:")
-new_lob_name = st.text_input("New LOB Name:")
-new_major_product_group_name = st.text_input("New Major Product Group Name:")
-new_minor_product_group_name = st.text_input("New Minor Product Group Name:")
-new_marketing_product_group_name = st.text_input("New Marketing Product Group Name:")
-new_product_code = st.text_input("New Product Code:")
+new_coverage_plan = st.text_input("Coverage Plan:")
+new_company_code = st.text_input("Company Code:")
+new_system_code = st.text_input("System Code:")
+new_lob_name = st.text_input("LOB Name:")
+new_major_product_group_name = st.text_input("Major Product Group Name:")
+new_minor_product_group_name = st.text_input("Minor Product Group Name:")
+new_marketing_product_group_name = st.text_input("Marketing Product Group Name:")
+new_product_code = st.text_input("Product Code:")
 
 # Additional text entry boxes
-new_coverage_plan_code = st.text_input("New Coverage Plan Code:")
-new_policy_company_code = st.text_input("New Policy Company Code:")
-new_effective_date = st.text_input("New Effective Date:")
-new_policy_form_code = st.text_input("New Policy Form Code:")
-new_termination_reason_code = st.text_input("New Termination Reason Code:")
+coverage_plan_code = st.text_input("Coverage Plan Code:")
+policy_company_code = st.text_input("Policy Company Code:")
+effective_date = st.text_input("Effective Date:")
+policy_form_code = st.text_input("Policy Form Code:")
+termination_reason_code = st.text_input("Termination Reason Code:")
 
 # Create a button to submit the new coverage information
-if st.button("Add New Coverage"):
-    # You can perform some action here when the user clicks the "Add New Coverage" button
-    st.write("New Coverage Added:")
-    st.write(f"New Coverage Plan: {new_coverage_plan}")
-    st.write(f"New Company Code: {new_company_code}")
-    st.write(f"New System Code: {new_system_code}")
-    st.write(f"New LOB Name: {new_lob_name}")
-    st.write(f"New Major Product Group Name: {new_major_product_group_name}")
-    st.write(f"New Minor Product Group Name: {new_minor_product_group_name}")
-    st.write(f"New Marketing Product Group Name: {new_marketing_product_group_name}")
-    st.write(f"New Product Code: {new_product_code}")
+if st.button("Add Coverage"):
+    # You can perform some action here when the user clicks the "Add Coverage" button
+    st.write("Coverage Added:")
+    st.write(f"Coverage Plan: {new_coverage_plan}")
+    st.write(f"Company Code: {new_company_code}")
+    st.write(f"System Code: {new_system_code}")
+    st.write(f"LOB Name: {new_lob_name}")
+    st.write(f"Major Product Group Name: {new_major_product_group_name}")
+    st.write(f"Minor Product Group Name: {new_minor_product_group_name}")
+    st.write(f"Marketing Product Group Name: {new_marketing_product_group_name}")
+    st.write(f"Product Code: {new_product_code}")
 
     # Additional fields
-    st.write(f"New Coverage Plan Code: {new_coverage_plan_code}")
-    st.write(f"New Policy Company Code: {new_policy_company_code}")
-    st.write(f"New Effective Date: {new_effective_date}")
-    st.write(f"New Policy Form Code: {new_policy_form_code}")
-    st.write(f"New Termination Reason Code: {new_termination_reason_code}")
+    st.write(f"Coverage Plan Code: {coverage_plan_code}")
+    st.write(f"Policy Company Code: {policy_company_code}")
+    st.write(f"Effective Date: {effective_date}")
+    st.write(f"Policy Form Code: {policy_form_code}")
+    st.write(f"Termination Reason Code: {termination_reason_code}")
