@@ -76,80 +76,63 @@ st.title("Search and Add Coverage")
 st.header("Search Criteria")
 
 # Create search boxes for various criteria
-coverage_plan = st.text_input("Coverage Plan:")
-company_code = st.text_input("Company Code:")
+search_coverage_plan = st.text_input("Coverage Plan (Search):")
+search_company_code = st.text_input("Company Code (Search):")
 
 # Create a dropdown menu for System Code with the specified choices (default to None)
 system_code_options = [None, "SHARP", "CIC", "LIFEPRO"]
-system_code = st.selectbox("System Code:", system_code_options)
+search_system_code = st.selectbox("System Code (Search):", system_code_options)
 
 # Create a dropdown menu for LOB Name with the specified choices (default to None)
 lob_name_options = [None, "ANNUITY", "GROUP", "HEALTH", "LIFE"]
-lob_name = st.selectbox("LOB Name:", lob_name_options)
+search_lob_name = st.selectbox("LOB Name (Search):", lob_name_options)
 
 # Create a dropdown menu for Major Product Group Name with specified choices (default to None)
 major_product_group_options = [None, "EI ANN", "EIUL", "FIXED ANN", "GRP ANN", "GRP HEALTH", "GRP LIFE"]
-major_product_group_name = st.selectbox("Major Product Group Name:", major_product_group_options)
+search_major_product_group_name = st.selectbox("Major Product Group Name (Search):", major_product_group_options)
 
-minor_product_group_name = st.text_input("Minor Product Group Name:")
-marketing_product_group_name = st.text_input("Marketing Product Group Name:")
-product_code = st.text_input("Product Code:")
+search_minor_product_group_name = st.text_input("Minor Product Group Name (Search):")
+search_marketing_product_group_name = st.text_input("Marketing Product Group Name (Search):")
+search_product_code = st.text_input("Product Code (Search):")
 
 # Create a submit button for searching
-if st.button("Search"):
-    # Display search results
-    st.subheader("Search Results:")
-    st.write(f"Coverage Plan: {coverage_plan}")
-    st.write(f"Company Code: {company_code}")
-    st.write(f"System Code: {system_code}")
-    st.write(f"LOB Name: {lob_name}")
-    st.write(f"Major Product Group Name: {major_product_group_name}")
-    st.write(f"Minor Product Group Name: {minor_product_group_name}")
-    st.write(f"Marketing Product Group Name: {marketing_product_group_name}")
-    st.write(f"Product Code: {product_code}")
+search_button = st.button("Search")
 
 # Create a clear button to reset the search form fields
-if st.button("Clear"):
-    coverage_plan = company_code = system_code = lob_name = ""
-    major_product_group_name = minor_product_group_name = ""
-    marketing_product_group_name = product_code = ""
+clear_button = st.button("Clear")
 
 # Create a new section for "Add New Coverage"
 st.header("Add New Coverage")
 
 # Add form fields for adding new coverage
-new_coverage_plan = st.text_input("Coverage Plan:")
-new_company_code = st.text_input("Company Code:")
-new_system_code = st.text_input("System Code:")
-new_lob_name = st.text_input("LOB Name:")
-new_major_product_group_name = st.text_input("Major Product Group Name:")
-new_minor_product_group_name = st.text_input("Minor Product Group Name:")
-new_marketing_product_group_name = st.text_input("Marketing Product Group Name:")
-new_product_code = st.text_input("Product Code:")
+new_coverage_plan = st.text_input("Coverage Plan (New):")
+new_company_code = st.text_input("Company Code (New):")
+new_system_code = st.text_input("System Code (New):")
+new_lob_name = st.text_input("LOB Name (New):")
+new_major_product_group_name = st.text_input("Major Product Group Name (New):")
+new_minor_product_group_name = st.text_input("Minor Product Group Name (New):")
+new_marketing_product_group_name = st.text_input("Marketing Product Group Name (New):")
+new_product_code = st.text_input("Product Code (New):")
 
 # Additional text entry boxes
-new_coverage_plan_code = st.text_input("Coverage Plan Code:")
-new_policy_company_code = st.text_input("Policy Company Code:")
-new_effective_date = st.text_input("Effective Date:")
-new_policy_form_code = st.text_input("Policy Form Code:")
-new_termination_reason_code = st.text_input("Termination Reason Code:")
+new_coverage_plan_code = st.text_input("Coverage Plan Code (New):")
+new_policy_company_code = st.text_input("Policy Company Code (New):")
+new_effective_date = st.text_input("Effective Date (New):")
+new_policy_form_code = st.text_input("Policy Form Code (New):")
+new_termination_reason_code = st.text_input("Termination Reason Code (New):")
 
 # Create a button to submit the new coverage information
-if st.button("Add New Coverage"):
-    # Display confirmation message for new coverage added
-    st.subheader("New Coverage Added:")
-    st.write(f"Coverage Plan: {new_coverage_plan}")
-    st.write(f"Company Code: {new_company_code}")
-    st.write(f"System Code: {new_system_code}")
-    st.write(f"LOB Name: {new_lob_name}")
-    st.write(f"Major Product Group Name: {new_major_product_group_name}")
-    st.write(f"Minor Product Group Name: {new_minor_product_group_name}")
-    st.write(f"Marketing Product Group Name: {new_marketing_product_group_name}")
-    st.write(f"Product Code: {new_product_code}")
+add_new_coverage_button = st.button("Add New Coverage")
 
-    # Additional fields for new coverage
-    st.write(f"Coverage Plan Code: {new_coverage_plan_code}")
-    st.write(f"Policy Company Code: {new_policy_company_code}")
-    st.write(f"Effective Date: {new_effective_date}")
-    st.write(f"Policy Form Code: {new_policy_form_code}")
-    st.write(f"Termination Reason Code: {new_termination_reason_code}")
+# Handle button clicks
+if search_button:
+    # Perform search
+    pass
+
+if clear_button:
+    # Clear search form fields
+    pass
+
+if add_new_coverage_button:
+    # Add new coverage
+    pass
