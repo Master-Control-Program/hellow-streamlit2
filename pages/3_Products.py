@@ -17,7 +17,7 @@ import sqlite3
 import pandas as pd
 
 # Path to your SQLite database
-DB_PATH = "C:\\sqllite\\brad1.db"
+DB_PATH = "C:\\SQLLITE\\brad1.db"
 
 def connect_to_db(path):
     """Connect to the SQLite database."""
