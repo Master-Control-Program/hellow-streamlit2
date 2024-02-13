@@ -38,7 +38,7 @@ def main():
     conn = connect_to_db(DB_PATH)
 
     # You can change this to a selectbox with table names if you have multiple tables
-    table_name = 'your_table_name'  # Replace with your table name
+    table_name = 'pet_owners'  # Replace with your table name
     
     if st.button("Load Data"):
         # Load and display the data
