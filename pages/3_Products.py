@@ -30,6 +30,12 @@ def load_data(conn, table_name):
     df = pd.read_sql(query, conn)
     return df
 
+def get_table_names(conn):
+    """Get a list of all table names in the database."""
+    query = "SELECT name FROM sqlite_master WHERE type='table';"
+    df = pd.read_sql(query, conn)
+    return df['name'].tolist()
+
 def main():
     """Main function to run the Streamlit app."""
     st.title("SQLite Database Viewer")
