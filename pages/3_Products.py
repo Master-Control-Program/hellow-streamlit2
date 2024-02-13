@@ -17,7 +17,7 @@ import sqlite3
 import pandas as pd
 
 # Path to your SQLite database
-DB_PATH = "C:\sqlite\pets.db"
+DB_PATH = "C:\sqlite\brad1.db"
 
 def connect_to_db(path):
     """Connect to the SQLite database."""
@@ -38,7 +38,7 @@ def main():
     conn = connect_to_db(DB_PATH)
 
     # You can change this to a selectbox with table names if you have multiple tables
-    table_name = 'pet_owners'  # Replace with your table name
+    table_name = 'IDW1'  # Replace with your table name
     
     if st.button("Load Data"):
         # Load and display the data
