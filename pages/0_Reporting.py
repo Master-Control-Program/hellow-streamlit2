@@ -12,36 +12,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import streamlit as st
 import sqlite3
 
 # Specify the path to your SQLite database
 DB_PATH = r"C:\sqllite\brad1.db"
 
-try:
-    # Attempt to connect to the database
-    conn = sqlite3.connect(DB_PATH)
-    print("Connected to the database successfully.")
+
+# Attempt to connect to the database
+conn = sqlite3.connect(DB_PATH)
+print("Connected to the database successfully.")
     
     # You can add your database operations here
     
     # Create a cursor object using the cursor() method
-    cursor = conn.cursor()
+cursor = conn.cursor()
     
     # Retrieve all the table names
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     
     # Fetch all results
-    tables = cursor.fetchall()
+tables = cursor.fetchall()
     
     # Print the list of tables
-    print("List of tables in the database:")
-    for table in tables:
-        print(table[0])
+print("List of tables in the database:")
+for table in tables:
+    print(table[0])
 
 
+def main():
+    """Main function to run the Streamlit app."""
+    st.title("SQLite Database Viewer")
 
+    # Create a selectbox for table names
+    table_name = st.selectbox("Choose a table", options=tables)
 
-    # Close the database connection
+    # Don't forget to close the connection
     conn.close()
-except sqlite3.Error as error:
-    print("Error while connecting to sqlite", error)
+
+if __name__ == "__main__":
+    main()
