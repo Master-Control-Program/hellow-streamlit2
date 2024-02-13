@@ -12,3 +12,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import streamlit as st
+import sqlite3
+import pandas as pd
+
+# Path to your SQLite database
+DB_PATH = "C:\\sqlite\\pets.db"
+
+def connect_to_db(path):
+    """Connect to the SQLite database."""
+    conn = sqlite3.connect(path)
+    return conn
+
+def load_data(conn, table_name):
+    """Load data from a specified table."""
+    query = f"SELECT * FROM {table_name}"
+    df = pd.read_sql(query, conn)
+    return df
+
+def main():
+    """Main function to run the Streamlit app."""
+    st.title("SQLite Database Viewer")
+
+    # Connect to the database
+    conn = connect_to_db(DB_PATH)
+
+    # You can change this to a selectbox with table names if you have multiple tables
+    table_name = 'your_table_name'  # Replace with your table name
+    
+    if st.button("Load Data"):
+        # Load and display the data
+        df = load_data(conn, table_name)
+        st.write(df)
+
+    # Don't forget to close the connection
+    conn.close()
+
+if __name__ == "__main__":
+    main()
