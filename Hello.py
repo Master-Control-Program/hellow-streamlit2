@@ -97,8 +97,8 @@ product_code = st.text_input("Product Code:")
 
 # Create a submit button for searching
 if st.button("Search"):
-    # You can perform some action here when the user clicks the "Search" button
-    st.write("Search Results:")
+    # Display search results
+    st.subheader("Search Results:")
     st.write(f"Coverage Plan: {coverage_plan}")
     st.write(f"Company Code: {company_code}")
     st.write(f"System Code: {system_code}")
@@ -115,7 +115,7 @@ if st.button("Clear"):
     marketing_product_group_name = product_code = ""
 
 # Create a new section for "Add New Coverage"
-st.header("Add Coverage")
+st.header("Add New Coverage")
 
 # Add form fields for adding new coverage
 new_coverage_plan = st.text_input("Coverage Plan:")
@@ -128,16 +128,16 @@ new_marketing_product_group_name = st.text_input("Marketing Product Group Name:"
 new_product_code = st.text_input("Product Code:")
 
 # Additional text entry boxes
-coverage_plan_code = st.text_input("Coverage Plan Code:")
-policy_company_code = st.text_input("Policy Company Code:")
-effective_date = st.text_input("Effective Date:")
-policy_form_code = st.text_input("Policy Form Code:")
-termination_reason_code = st.text_input("Termination Reason Code:")
+new_coverage_plan_code = st.text_input("Coverage Plan Code:")
+new_policy_company_code = st.text_input("Policy Company Code:")
+new_effective_date = st.text_input("Effective Date:")
+new_policy_form_code = st.text_input("Policy Form Code:")
+new_termination_reason_code = st.text_input("Termination Reason Code:")
 
 # Create a button to submit the new coverage information
-if st.button("Add Coverage"):
-    # You can perform some action here when the user clicks the "Add Coverage" button
-    st.write("Coverage Added:")
+if st.button("Add New Coverage"):
+    # Display confirmation message for new coverage added
+    st.subheader("New Coverage Added:")
     st.write(f"Coverage Plan: {new_coverage_plan}")
     st.write(f"Company Code: {new_company_code}")
     st.write(f"System Code: {new_system_code}")
@@ -147,9 +147,9 @@ if st.button("Add Coverage"):
     st.write(f"Marketing Product Group Name: {new_marketing_product_group_name}")
     st.write(f"Product Code: {new_product_code}")
 
-    # Additional fields
-    st.write(f"Coverage Plan Code: {coverage_plan_code}")
-    st.write(f"Policy Company Code: {policy_company_code}")
-    st.write(f"Effective Date: {effective_date}")
-    st.write(f"Policy Form Code: {policy_form_code}")
-    st.write(f"Termination Reason Code: {termination_reason_code}")
+    # Additional fields for new coverage
+    st.write(f"Coverage Plan Code: {new_coverage_plan_code}")
+    st.write(f"Policy Company Code: {new_policy_company_code}")
+    st.write(f"Effective Date: {new_effective_date}")
+    st.write(f"Policy Form Code: {new_policy_form_code}")
+    st.write(f"Termination Reason Code: {new_termination_reason_code}")
