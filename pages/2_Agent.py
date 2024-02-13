@@ -17,6 +17,8 @@
 import streamlit as st
 import sqlite3
 
+from flask_sqlalchemy import SQLAlchemy
+
 # Create the SQL connection to pets_db as specified in your secrets file.
 conn = st.connection('brad1_db', type='sql')
 
