@@ -37,8 +37,14 @@ def main():
     # Connect to the database
     conn = connect_to_db(DB_PATH)
 
+     # Get table names to populate the select box
+    table_names = get_table_names(conn)
+    
+    # Create a selectbox for table names
+    table_name = st.selectbox("Choose a table", options=table_names)
+
     # You can change this to a selectbox with table names if you have multiple tables
-    table_name = 'IDW1'  # Replace with your table name
+    #table_name = 'IDW1'  # Replace with your table name
     
     if st.button("Load Data"):
         # Load and display the data
