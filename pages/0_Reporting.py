@@ -15,7 +15,7 @@
 import sqlite3
 
 # Specify the path to your SQLite database
-database_path = r"C:\sqlite\brad1.db"
+database_path = r"C:\sqllite\brad1.db"
 
 try:
     # Attempt to connect to the database
