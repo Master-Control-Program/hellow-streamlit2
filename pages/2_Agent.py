@@ -19,8 +19,11 @@
 import streamlit as st
 import sqlite3
 
+
+
 # Create the SQL connection to pets_db as specified in your secrets file.
-conn = st.connection('pets_db', type='sql')
+conn = st.connection('pets_db', type='sql', check_same_thread=False)
+#conn = sqlite3.connect('pets.db', check_same_thread=False)
 
 # Insert some data with conn.session.
 with conn.session as s:
