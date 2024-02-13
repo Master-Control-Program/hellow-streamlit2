@@ -17,9 +17,10 @@
 
 import hmac
 import streamlit as st
+import sqlite3
 
 
-def check_password():
+'''def check_password():
     """Returns `True` if the user had the correct password."""
 
     def password_entered():
@@ -45,7 +46,7 @@ def check_password():
 
 if not check_password():
     st.stop()  # Do not continue if check_password is not True.
-
+'''
 
 
 
