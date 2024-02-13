@@ -45,7 +45,7 @@ def main():
     st.title("SQLite Database Viewer")
 
     # Create a selectbox for table names
-    table_name = st.selectbox("Choose a table", options=tables)
+    table_name = st.selectbox("Choose a table", options=table)
 
     # Don't forget to close the connection
     conn.close()
