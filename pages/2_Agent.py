@@ -15,6 +15,7 @@
 # streamlit_app.py
 
 import streamlit as st
+import sqlite3
 
 # Create the SQL connection to pets_db as specified in your secrets file.
 conn = st.connection('brad1_db', type='sql')
