@@ -15,15 +15,32 @@
 import sqlite3
 
 # Specify the path to your SQLite database
-database_path = r"C:\sqllite\brad1.db"
+DB_PATH = r"C:\sqllite\brad1.db"
 
 try:
     # Attempt to connect to the database
-    conn = sqlite3.connect(database_path)
+    conn = sqlite3.connect(DB_PATH)
     print("Connected to the database successfully.")
     
     # You can add your database operations here
     
+    # Create a cursor object using the cursor() method
+    cursor = conn.cursor()
+    
+    # Retrieve all the table names
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    
+    # Fetch all results
+    tables = cursor.fetchall()
+    
+    # Print the list of tables
+    print("List of tables in the database:")
+    for table in tables:
+        print(table[0])
+
+
+
+
     # Close the database connection
     conn.close()
 except sqlite3.Error as error:

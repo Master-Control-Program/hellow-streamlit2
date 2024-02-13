@@ -21,7 +21,7 @@ DB_PATH = r"C:\sqllite\brad1.db"
 
 def connect_to_db(path):
     """Connect to the SQLite database."""
-    conn = sqlite3.connect(path)
+    conn = sqlite3.connect(DB_PATH)
     return conn
 
 def load_data(conn, table_name):
