@@ -12,3 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import sqlite3
+
+# Specify the path to your SQLite database
+database_path = r"C:\sqlite\brad1.db"
+
+try:
+    # Attempt to connect to the database
+    conn = sqlite3.connect(database_path)
+    print("Connected to the database successfully.")
+    
+    # You can add your database operations here
+    
+    # Close the database connection
+    conn.close()
+except sqlite3.Error as error:
+    print("Error while connecting to sqlite", error)
