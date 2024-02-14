@@ -94,3 +94,24 @@ if clear_button:
 if add_new_coverage_button:
     # Add new coverage
     pass
+
+
+from st_pages import Page, Section, show_pages, add_page_title
+
+# Either this or add_indentation() MUST be called on each page in your
+# app to add indendation in the sidebar
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles and icons
+# should be
+show_pages(
+    [
+        Page("streamlit_app.py", "Home", "🏠"),
+        Page("other_pages/page2.py", "Page 2", ":books:"),
+        Section("My section", icon="🎈️"),
+        # Pages after a section will be indented
+        Page("Another page", icon="💪"),
+        # Unless you explicitly say in_section=False
+        Page("Not in a section", in_section=False)
+    ]
+)
