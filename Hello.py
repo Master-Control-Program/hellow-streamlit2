@@ -17,8 +17,8 @@
 import streamlit as st
 import sqlite3
 
-# Title for the app
-st.title("Search and Add Coverage")
+# Custom CSS to style the title
+st.markdown("<h1 style='text-align: center; color: black; font-size: 36px; font-weight: bold;'>Coverage</h1>", unsafe_allow_html=True)
 
 # Create a section for "Search Criteria"
 st.header("Search Criteria")
