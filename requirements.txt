@@ -5,3 +5,4 @@ pydeck
 streamlit
 sqlalchemy==1.4.46
 st-pages
+st_pages
