@@ -18,7 +18,7 @@ import streamlit as st
 import sqlite3
 
 st.sidebar.title("Home")
-st.sidebar.markdown(f"[dir1]({filelist[0]})")
+
 
 # Custom CSS to style the title
 st.markdown("<h1 style='text-align: left; color: yellow; font-size: 75px; font-weight: bold;'>Data Warehouse Table Maintenance</h1>", unsafe_allow_html=True)
