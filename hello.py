@@ -17,7 +17,7 @@
 import streamlit as st
 import sqlite3
 
-st.sidebar.title("Folder visualizer")
+st.sidebar.title("Home")
 st.sidebar.markdown(f"[dir1]({filelist[0]})")
 
 # Custom CSS to style the title
