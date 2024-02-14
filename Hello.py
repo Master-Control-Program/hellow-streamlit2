@@ -18,7 +18,13 @@ import streamlit as st
 import sqlite3
 
 # Custom CSS to style the title
+st.markdown("<h1 style='text-align: left; color: yellow; font-size: 75px; font-weight: bold;'>Data Warehouse Table Maintenance</h1>", unsafe_allow_html=True)
+
+# Custom CSS to style the title
 st.markdown("<h1 style='text-align: center; color: white; font-size: 52px; font-weight: bold;'>Coverage</h1>", unsafe_allow_html=True)
+
+# Custom CSS to style the title
+st.markdown("<h1 style='text-align: left; color: red; font-size: 36px; font-weight: bold;'>Page listing defaults to system code 1/APS ***Please enter your Search Criteria.***</h1>", unsafe_allow_html=True)
 
 # Create a section for "Search Criteria"
 st.header("Search Criteria")
