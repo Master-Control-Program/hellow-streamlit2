@@ -16,7 +16,7 @@
 
 import streamlit as st
 import sqlite3
-import st_pages
+
 
 # Custom CSS to style the title
 st.markdown("<h1 style='text-align: left; color: yellow; font-size: 75px; font-weight: bold;'>Data Warehouse Table Maintenance</h1>", unsafe_allow_html=True)
