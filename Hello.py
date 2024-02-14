@@ -96,6 +96,7 @@ if add_new_coverage_button:
     # Add new coverage
     pass
 
+
 import streamlit as st
 from st_pages import Page, Section, show_pages, add_page_title
 
@@ -107,7 +108,7 @@ add_page_title()
 # should be
 show_pages(
     [
-        Page("streamlit_Hello.py", "Home", "🏠"),
+        Page("streamlit_app.py", "Home", "🏠"),
         Page("other_pages/page2.py", "Page 2", ":books:"),
         Section("My section", icon="🎈️"),
         # Pages after a section will be indented
