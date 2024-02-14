@@ -20,70 +20,71 @@ import sqlite3
 # Title for the app
 st.title("Search and Add Coverage")
 
-# Create a section for "Search Criteria" in the first column
+# Create a section for "Search Criteria"
+st.header("Search Criteria")
+
+# Split the search criteria section into two columns
 col1, col2 = st.columns(2)
 
+# Create search boxes for various criteria in the first column
 with col1:
-    st.header("Search Criteria")
-
-    # Create search boxes for various criteria
     search_coverage_plan = st.text_input("Coverage Plan (Search):")
     search_company_code = st.text_input("Company Code (Search):")
+    search_system_code = st.selectbox("System Code (Search):", [None, "SHARP", "CIC", "LIFEPRO"])
+    search_lob_name = st.selectbox("LOB Name (Search):", [None, "ANNUITY", "GROUP", "HEALTH", "LIFE"])
 
-    # Create a dropdown menu for System Code with the specified choices (default to None)
-    system_code_options = [None, "SHARP", "CIC", "LIFEPRO"]
-    search_system_code = st.selectbox("System Code (Search):", system_code_options)
-
-    # Create a dropdown menu for LOB Name with the specified choices (default to None)
-    lob_name_options = [None, "ANNUITY", "GROUP", "HEALTH", "LIFE"]
-    search_lob_name = st.selectbox("LOB Name (Search):", lob_name_options)
-
-    # Create a dropdown menu for Major Product Group Name with specified choices (default to None)
-    major_product_group_options = [None, "EI ANN", "EIUL", "FIXED ANN", "GRP ANN", "GRP HEALTH", "GRP LIFE"]
-    search_major_product_group_name = st.selectbox("Major Product Group Name (Search):", major_product_group_options)
-
+# Create search boxes for various criteria in the second column
+with col2:
+    search_major_product_group_name = st.selectbox("Major Product Group Name (Search):", [None, "EI ANN", "EIUL", "FIXED ANN", "GRP ANN", "GRP HEALTH", "GRP LIFE"])
     search_minor_product_group_name = st.text_input("Minor Product Group Name (Search):")
     search_marketing_product_group_name = st.text_input("Marketing Product Group Name (Search):")
     search_product_code = st.text_input("Product Code (Search):")
 
-    # Create a submit button for searching
-    search_button = st.button("Search")
+# Create a submit button for searching
+search_button = st.button("Search")
 
-# Create a clear button to reset the search form fields in the first column
-with col1:
-    if search_button:
-        # Perform search
-        pass
+# Create a clear button to reset the search form fields
+clear_button = st.button("Clear")
 
-    clear_button = st.button("Clear")
-    if clear_button:
-        # Clear search form fields
-        pass
+# Create a new section for "Add New Coverage"
+st.header("Add New Coverage")
 
-# Create a new section for "Add New Coverage" in the second column
-with col2:
-    st.header("Add New Coverage")
+# Split the "Add New Coverage" section into two columns
+col3, col4 = st.columns(2)
 
-    # Add form fields for adding new coverage
+# Add form fields for adding new coverage in the first column
+with col3:
     new_coverage_plan = st.text_input("Coverage Plan (New):")
     new_company_code = st.text_input("Company Code (New):")
     new_system_code = st.text_input("System Code (New):")
     new_lob_name = st.text_input("LOB Name (New):")
+
+# Add form fields for adding new coverage in the second column
+with col4:
     new_major_product_group_name = st.text_input("Major Product Group Name (New):")
     new_minor_product_group_name = st.text_input("Minor Product Group Name (New):")
     new_marketing_product_group_name = st.text_input("Marketing Product Group Name (New):")
     new_product_code = st.text_input("Product Code (New):")
 
-    # Additional text entry boxes
-    new_coverage_plan_code = st.text_input("Coverage Plan Code (New):")
-    new_policy_company_code = st.text_input("Policy Company Code (New):")
-    new_effective_date = st.text_input("Effective Date (New):")
-    new_policy_form_code = st.text_input("Policy Form Code (New):")
-    new_termination_reason_code = st.text_input("Termination Reason Code (New):")
+# Additional text entry boxes
+new_coverage_plan_code = st.text_input("Coverage Plan Code (New):")
+new_policy_company_code = st.text_input("Policy Company Code (New):")
+new_effective_date = st.text_input("Effective Date (New):")
+new_policy_form_code = st.text_input("Policy Form Code (New):")
+new_termination_reason_code = st.text_input("Termination Reason Code (New):")
 
-    # Create a button to submit the new coverage information
-    add_new_coverage_button = st.button("Add New Coverage")
+# Create a button to submit the new coverage information
+add_new_coverage_button = st.button("Add New Coverage")
 
-    if add_new_coverage_button:
-        # Add new coverage
-        pass
+# Handle button clicks
+if search_button:
+    # Perform search
+    pass
+
+if clear_button:
+    # Clear search form fields
+    pass
+
+if add_new_coverage_button:
+    # Add new coverage
+    pass
