@@ -17,8 +17,6 @@
 import streamlit as st
 import sqlite3
 
-
-
 # Custom CSS to style the title
 st.markdown("<h1 style='text-align: left; color: yellow; font-size: 75px; font-weight: bold;'>Data Warehouse Table Maintenance</h1>", unsafe_allow_html=True)
 
@@ -83,6 +81,16 @@ new_termination_reason_code = st.text_input("Termination Reason Code (New):")
 
 # Create a button to submit the new coverage information
 add_new_coverage_button = st.button("Add New Coverage")
+
+# Create a DataFrame to store search criteria
+search_criteria_data = {
+    "Field": ["Coverage Plan", "Company Code", "System Code", "LOB Name", "Major Product Group Name", "Minor Product Group Name", "Marketing Product Group Name", "Product Code"],
+    "Value": [search_coverage_plan, search_company_code, search_system_code, search_lob_name, search_major_product_group_name, search_minor_product_group_name, search_marketing_product_group_name, search_product_code]
+}
+
+# Display the search criteria in a table
+st.subheader("Search Criteria Summary")
+st.table(search_criteria_data)
 
 # Handle button clicks
 if search_button:
