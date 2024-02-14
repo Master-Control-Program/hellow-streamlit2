@@ -17,22 +17,36 @@
 # streamlit_app.py
 
 import streamlit as st
-from st_pages import Page, Section, show_pages, add_page_title
+import pandas as pd
 
-# Either this or add_indentation() MUST be called on each page in your
-# app to add indendation in the sidebar
-add_page_title()
- 
-# Specify what pages should be shown in the sidebar, and what their titles and icons
-# should be
-show_pages(
-    [
-        Page("streamlit_app.py", "Home", "🏠"),
-        Page("other_pages/page2.py", "Page 2", ":books:"),
-        Section("My section", icon="🎈️"),
-        # Pages after a section will be indented
-        Page("Another page", icon="💪"),
-        # Unless you explicitly say in_section=False
-        Page("Not in a section", in_section=False)
-    ]
-)
+# Set page title
+st.set_page_config(page_title="Region")
+
+# Text input boxes
+description = st.text_input("Description", "")
+manager_name = st.text_input("Manager Name", "")
+
+# Search and Clear Buttons
+col1, col2 = st.columns([1, 1])
+if col1.button("Search"):
+    # Perform search action
+    pass  # Placeholder for search action
+if col2.button("Clear"):
+    description = ""
+    manager_name = ""
+
+# Sample table data
+data = {
+    "Region": ["Region A", "Region B", "Region C"],
+    "Description": ["Description A", "Description B", "Description C"],
+    "Manager Name": ["Manager A", "Manager B", "Manager C"]
+}
+df = pd.DataFrame(data)
+
+# Filter data based on input
+filtered_df = df[(df["Description"].str.contains(description, case=False)) & 
+                 (df["Manager Name"].str.contains(manager_name, case=False))]
+
+# Display table
+st.table(filtered_df)
+
